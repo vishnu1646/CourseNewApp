@@ -7,14 +7,20 @@ import { AddcourseComponent } from './addcourse/addcourse.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { ViewcourseComponent } from './viewcourse/viewcourse.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 const myRoute:Routes=[
   {
-    path:"",
+    path:"add",
     component:AddcourseComponent
   },
   {
-    path:"/viewcourse",
+    path:"ViewCourse",
     component:ViewcourseComponent
+  },
+  {
+    path:"",
+    component:NavbarComponent
   }
   
 ]
@@ -23,11 +29,14 @@ const myRoute:Routes=[
   declarations: [
     AppComponent,
     AddcourseComponent,
-    ViewcourseComponent
+    ViewcourseComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,RouterModule.forRoot(myRoute)
+    AppRoutingModule,RouterModule.forRoot(myRoute),
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
